@@ -28,11 +28,11 @@ public class DemoApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		String msg = ResourceBundle.getBundle("messages").getString("message");
-		msg = new String(msg.getBytes(ISO_8859_1), UTF_8);
+		//msg = new String(msg.getBytes(ISO_8859_1), UTF_8);
 		Map<String, Object> arg = new HashMap<>(1);
-		arg.put("arg1", new Boolean(true));
-		arg.put("arg2", new Integer(78691));
-		arg.put("arg3", new Integer(2300));
+		arg.put("arg1", Boolean.valueOf(true));
+		arg.put("arg2", Integer.valueOf(78691));
+		arg.put("arg3", Integer.valueOf(2300));
 		msg = MessageFormat.format(msg, arg);
 		System.out.println(msg);
 		
